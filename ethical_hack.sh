@@ -30,7 +30,9 @@ echo "Option 12 : nmap UDP scan"
 echo "Option 13 : nmap ACK scan"
 echo "Option 14 : nmap version detection scan"
 echo "Option 15 : nmap OS fingerprinting scan"
-echo "Option 16 : Wanna Quit"
+echo "Option 16 : whois"
+echo "Option 17 : enum4linux"
+echo "Option 18 : Wanna Quit"
 
 echo -e "\nNote: Mr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"
 
@@ -39,7 +41,7 @@ echo -e "\nNow try any one of the options:\n "
 #------------------------------------------------------------------
 
 PS3='Please enter your choice: '
-options=("Option 1" "Option 2" "Option 3" "Option 4" "Option 5" "Option 6" "Option 7" "Option 8" "Option 9" "Option 10" "Option 11" "Option 12" "Option 13" "Option 14" "Option 15" "Quit")
+options=("Option 1" "Option 2" "Option 3" "Option 4" "Option 5" "Option 6" "Option 7" "Option 8" "Option 9" "Option 10" "Option 11" "Option 12" "Option 13" "Option 14" "Option 15" "Option 16" "Option 17" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -74,7 +76,7 @@ do
             echo -e "\nRunning nslookup.....\n"
    	    target=45.33.32.156
             nslookup $target
-            nslookup $target > /root/Desktop/bashscripts/$name/nslookup.txt
+            nslookup -type=any $target > /root/Desktop/bashscripts/$name/nslookup.txt
             echo -e "\nMr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"
 
            ;;
@@ -235,6 +237,32 @@ do
             echo -e "\nMr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"
 
            ;; 
+
+#-------------------------------------------------------------------------
+
+"Option 16")
+            echo -e "\nyou chose choice 16\n" 
+            echo -e "\nRunning whois.....\n"
+   	    target=45.33.32.156
+            whois --verbose $target
+            echo -e "\nWait please.....\n"
+            whois --verbose $target > /root/Desktop/bashscripts/$name/whois.txt
+            echo -e "\nMr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"
+
+           ;;
+
+#-------------------------------------------------------------------------
+
+"Option 17")
+            echo -e "\nyou chose choice 17\n" 
+            echo -e "\nRunning enum4linux.....\n"
+   	    target=192.168.1.9
+            enum4linux -v $target
+            echo -e "\nWait please.....\n"
+            enum4linux -v $target > /root/Desktop/bashscripts/$name/enum4linux.txt
+            echo -e "\nMr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"
+
+           ;;
 #-------------------------------------------------------------------------
         "Quit")
             break            
