@@ -23,15 +23,19 @@ Option 14 : nmap version detection scan
 Option 15 : nmap OS fingerprinting scan
 Option 16 : whois
 Option 17 : enum4linux
-Option 18 : Wanna Quit
+Option 18 : dnsenum
+Option 19 : smbclient
+Option 20 : nbtscan
+Option 21 : Wanna Quit
 
 Note: Mr/Mrs *****, you can check /root/Desktop/bashscripts/***** folder for output
 
-
 Now try any one of the options:
  
-1) Option 1     5) Option 5    9) Option 9   13) Option 13  17) Option 17
-2) Option 2     6) Option 6   10) Option 10  14) Option 14  18) Quit
-3) Option 3     7) Option 7   11) Option 11  15) Option 15
-4) Option 4     8) Option 8   12) Option 12  16) Option 16
+1) Option 1     6) Option 6   11) Option 11  16) Option 16  21) Quit
+2) Option 2     7) Option 7   12) Option 12  17) Option 17
+3) Option 3     8) Option 8   13) Option 13  18) Option 18
+4) Option 4     9) Option 9   14) Option 14  19) Option 19
+5) Option 5    10) Option 10  15) Option 15  20) Option 20
+
 Please enter your choice: *
