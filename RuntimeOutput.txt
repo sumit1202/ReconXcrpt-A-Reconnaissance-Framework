@@ -24,22 +24,26 @@ Option 14 : nmap version detection scan
 Option 15 : nmap OS fingerprinting scan
 Option 16 : whois
 Option 17 : enum4linux
-Option 18 : Wanna Quit
+Option 18 : dnsenum
+Option 19 : smbclient
+Option 20 : nbtscan
+Option 21 : Wanna Quit
 
 Note: Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
 
 
 Now try any one of the options:
  
-1) Option 1     5) Option 5    9) Option 9   13) Option 13  17) Option 17
-2) Option 2     6) Option 6   10) Option 10  14) Option 14  18) Quit
-3) Option 3     7) Option 7   11) Option 11  15) Option 15
-4) Option 4     8) Option 8   12) Option 12  16) Option 16
-
+1) Option 1     6) Option 6   11) Option 11  16) Option 16  21) Quit
+2) Option 2     7) Option 7   12) Option 12  17) Option 17
+3) Option 3     8) Option 8   13) Option 13  18) Option 18
+4) Option 4     9) Option 9   14) Option 14  19) Option 19
+5) Option 5    10) Option 10  15) Option 15  20) Option 20
 Please enter your choice: 1
 
 you chose choice 1
 
+#############################################################################
 
 Running netdiscover.....
 
@@ -48,30 +52,36 @@ Running netdiscover.....
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
 
+#############################################################################
+
 Please enter your choice: 2
 
 you chose choice 2
 
+#############################################################################
 
 Running ping.....
 
 PING 45.33.32.156 (45.33.32.156) 56(84) bytes of data.
-64 bytes from 45.33.32.156: icmp_seq=1 ttl=51 time=330 ms
-64 bytes from 45.33.32.156: icmp_seq=2 ttl=51 time=226 ms
-64 bytes from 45.33.32.156: icmp_seq=3 ttl=51 time=226 ms
-64 bytes from 45.33.32.156: icmp_seq=4 ttl=51 time=226 ms
-64 bytes from 45.33.32.156: icmp_seq=5 ttl=51 time=226 ms
-64 bytes from 45.33.32.156: icmp_seq=6 ttl=51 time=227 ms
-64 bytes from 45.33.32.156: icmp_seq=7 ttl=51 time=228 ms
-64 bytes from 45.33.32.156: icmp_seq=8 ttl=51 time=225 ms
+64 bytes from 45.33.32.156: icmp_seq=1 ttl=52 time=245 ms
+64 bytes from 45.33.32.156: icmp_seq=2 ttl=52 time=228 ms
+64 bytes from 45.33.32.156: icmp_seq=3 ttl=52 time=227 ms
+64 bytes from 45.33.32.156: icmp_seq=4 ttl=52 time=227 ms
+64 bytes from 45.33.32.156: icmp_seq=5 ttl=52 time=229 ms
+64 bytes from 45.33.32.156: icmp_seq=6 ttl=52 time=226 ms
+64 bytes from 45.33.32.156: icmp_seq=7 ttl=52 time=229 ms
+64 bytes from 45.33.32.156: icmp_seq=8 ttl=52 time=231 ms
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
+
+#############################################################################
 
 Please enter your choice: 3
 you chose choice 3 which is Option 3
 
 you chose choice 3
 
+#############################################################################
 
 Running nslookup.....
 
@@ -79,83 +89,103 @@ Running nslookup.....
 
 Authoritative answers can be found from:
 32.33.45.in-addr.arpa	nameserver = ns2.linode.com.
+32.33.45.in-addr.arpa	nameserver = ns5.linode.com.
 32.33.45.in-addr.arpa	nameserver = ns3.linode.com.
 32.33.45.in-addr.arpa	nameserver = ns4.linode.com.
 32.33.45.in-addr.arpa	nameserver = ns1.linode.com.
-32.33.45.in-addr.arpa	nameserver = ns5.linode.com.
 
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
+
+#############################################################################
 
 Please enter your choice: 4
 
 you chose choice 4
 
+#############################################################################
 
 Running traceroute.....
 
 traceroute to 45.33.32.156 (45.33.32.156), 30 hops max, 60 byte packets
  1  * * *
- 2  27.7.96.1 (27.7.96.1)  4.116 ms  3.613 ms  3.351 ms
- 3  202.88.156.61 (202.88.156.61)  3.086 ms  3.007 ms  5.872 ms
- 4  136.232.28.189 (136.232.28.189)  5.869 ms  5.850 ms  5.828 ms
+ 2  27.7.96.1 (27.7.96.1)  2.688 ms  2.698 ms  3.042 ms
+ 3  202.88.156.61 (202.88.156.61)  3.209 ms  3.494 ms  4.617 ms
+ 4  136.232.28.189 (136.232.28.189)  8.310 ms  8.310 ms  4.692 ms
  5  * * *
  6  * * *
  7  * * *
- 8  49.45.4.103 (49.45.4.103)  229.813 ms 49.45.4.85 (49.45.4.85)  231.387 ms  224.756 ms
- 9  103.198.140.89 (103.198.140.89)  224.036 ms 103.198.140.15 (103.198.140.15)  229.073 ms 103.198.140.17 (103.198.140.17)  208.524 ms
-10  be4918.ccr41.lax05.atlas.cogentco.com (38.104.85.57)  213.470 ms  220.789 ms  215.765 ms
-11  be3243.ccr41.lax01.atlas.cogentco.com (154.54.27.117)  214.206 ms  218.099 ms  215.682 ms
-12  be3177.ccr22.sjc01.atlas.cogentco.com (154.54.40.146)  235.260 ms  239.317 ms  235.195 ms
-13  be2063.rcr21.b001848-1.sjc01.atlas.cogentco.com (154.54.1.162)  232.729 ms be2095.rcr21.b001848-1.sjc01.atlas.cogentco.com (154.54.3.138)  236.078 ms  239.214 ms
-14  38.142.11.154 (38.142.11.154)  225.440 ms  225.409 ms  224.968 ms
-15  * * 173.230.159.67 (173.230.159.67)  223.806 ms
-16  scanme.nmap.org (45.33.32.156)  225.719 ms  223.683 ms *
+ 8  49.45.4.103 (49.45.4.103)  223.504 ms  223.420 ms  222.442 ms
+ 9  49.45.4.86 (49.45.4.86)  234.467 ms 103.198.140.17 (103.198.140.17)  223.010 ms 103.198.140.83 (103.198.140.83)  226.051 ms
+10  be4918.ccr41.lax05.atlas.cogentco.com (38.104.85.57)  216.830 ms be4844.ccr41.lax05.atlas.cogentco.com (38.104.84.209)  215.051 ms  214.940 ms
+11  be3243.ccr41.lax01.atlas.cogentco.com (154.54.27.117)  216.733 ms  214.782 ms be3359.ccr42.lax01.atlas.cogentco.com (154.54.3.69)  212.836 ms
+12  be3177.ccr22.sjc01.atlas.cogentco.com (154.54.40.146)  234.582 ms  234.528 ms  234.447 ms
+13  be2063.rcr21.b001848-1.sjc01.atlas.cogentco.com (154.54.1.162)  249.083 ms be2095.rcr21.b001848-1.sjc01.atlas.cogentco.com (154.54.3.138)  249.050 ms be2063.rcr21.b001848-1.sjc01.atlas.cogentco.com (154.54.1.162)  234.328 ms
+14  38.142.11.154 (38.142.11.154)  234.281 ms  234.274 ms  247.233 ms
+15  173.230.159.65 (173.230.159.65)  245.266 ms 173.230.159.67 (173.230.159.67)  243.340 ms  243.244 ms
+16  * * *
+17  * * *
+18  * * *
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *
 
 Wait please.....
 
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
 
+#############################################################################
+
 Please enter your choice: 5
 
 you chose choice 5
 
+#############################################################################
 
 Running nmap aggressive scan.....
 
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-30 11:44 IST
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-31 14:46 IST
 NSE: Loaded 148 scripts for scanning.
 NSE: Script Pre-scanning.
-Initiating NSE at 11:44
-Completed NSE at 11:44, 0.00s elapsed
-Initiating NSE at 11:44
-Completed NSE at 11:44, 0.00s elapsed
-Initiating Ping Scan at 11:44
+Initiating NSE at 14:46
+Completed NSE at 14:46, 0.00s elapsed
+Initiating NSE at 14:46
+Completed NSE at 14:46, 0.00s elapsed
+Initiating Ping Scan at 14:46
 Scanning 45.33.32.156 [4 ports]
-Completed Ping Scan at 11:44, 0.26s elapsed (1 total hosts)
-Initiating SYN Stealth Scan at 11:44
+Completed Ping Scan at 14:46, 0.26s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 14:46
 Scanning 45.33.32.156 [1000 ports]
-Discovered open port 22/tcp on 45.33.32.156
 Discovered open port 80/tcp on 45.33.32.156
+Discovered open port 22/tcp on 45.33.32.156
 Discovered open port 31337/tcp on 45.33.32.156
 Discovered open port 9929/tcp on 45.33.32.156
-Completed SYN Stealth Scan at 11:44, 22.89s elapsed (1000 total ports)
-Initiating Service scan at 11:44
+Completed SYN Stealth Scan at 14:46, 23.13s elapsed (1000 total ports)
+Initiating Service scan at 14:46
 Scanning 4 services on 45.33.32.156
-Completed Service scan at 11:44, 6.54s elapsed (4 services on 1 host)
+Completed Service scan at 14:46, 6.49s elapsed (4 services on 1 host)
 Initiating OS detection (try #1) against 45.33.32.156
 Retrying OS detection (try #2) against 45.33.32.156
-Initiating Traceroute at 11:44
-Completed Traceroute at 11:44, 3.26s elapsed
+Initiating Traceroute at 14:47
+Completed Traceroute at 14:47, 3.02s elapsed
 NSE: Script scanning 45.33.32.156.
-Initiating NSE at 11:44
-Completed NSE at 11:44, 7.07s elapsed
-Initiating NSE at 11:44
-Completed NSE at 11:44, 0.00s elapsed
+Initiating NSE at 14:47
+Completed NSE at 14:47, 7.34s elapsed
+Initiating NSE at 14:47
+Completed NSE at 14:47, 0.00s elapsed
 Nmap scan report for 45.33.32.156
-Host is up (0.23s latency).
-Not shown: 993 closed ports
+Host is up (0.24s latency).
+Not shown: 991 closed ports
 PORT      STATE    SERVICE      VERSION
 22/tcp    open     ssh          OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
 | ssh-hostkey: 
@@ -171,196 +201,91 @@ PORT      STATE    SERVICE      VERSION
 |_http-title: Go ahead and ScanMe!
 139/tcp   filtered netbios-ssn
 445/tcp   filtered microsoft-ds
+1720/tcp  filtered h323q931
+5060/tcp  filtered sip
 5900/tcp  filtered vnc
 9929/tcp  open     nping-echo   Nping echo
 31337/tcp open     tcpwrapped
-Aggressive OS guesses: HP P2000 G3 NAS device (93%), Linux 2.6.32 (92%), OpenWrt 12.09-rc1 Attitude Adjustment (Linux 3.3 - 3.7) (92%), Infomir MAG-250 set-top box (92%), Linux 3.7 (92%), Ubiquiti AirOS 5.5.9 (92%), Linux 2.6.32 - 3.13 (92%), Linux 3.3 (92%), Linux 3.13 or 4.2 (91%), Linux 2.6.32 - 3.1 (91%)
+Device type: broadband router|storage-misc|general purpose|WAP|media device
+Running (JUST GUESSING): Linux 3.X|2.6.X|4.X (91%), HP embedded (91%), Ubiquiti embedded (90%), Ubiquiti AirOS 5.X (90%), Infomir embedded (89%)
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/h:hp:p2000_g3 cpe:/o:linux:linux_kernel:2.6.32 cpe:/h:ubnt:airmax_nanostation cpe:/o:ubnt:airos:5.5.9 cpe:/o:linux:linux_kernel:4.2 cpe:/o:linux:linux_kernel:2.6 cpe:/h:infomir:mag-250
+Aggressive OS guesses: OpenWrt 12.09-rc1 Attitude Adjustment (Linux 3.3 - 3.7) (91%), HP P2000 G3 NAS device (91%), Linux 2.6.32 (90%), Ubiquiti AirMax NanoStation WAP (Linux 2.6.32) (90%), Ubiquiti AirOS 5.5.9 (90%), Ubiquiti Pico Station WAP (AirOS 5.2.6) (89%), Linux 2.6.32 - 3.13 (89%), Linux 3.13 or 4.2 (89%), Linux 2.6.32 - 3.1 (89%), Infomir MAG-250 set-top box (89%)
 No exact OS matches for host (test conditions non-ideal).
-Uptime guess: 13.846 days (since Tue Jul 16 15:27:03 2019)
+Uptime guess: 16.113 days (since Mon Jul 15 12:04:55 2019)
 Network Distance: 16 hops
-TCP Sequence Prediction: Difficulty=257 (Good luck!)
+TCP Sequence Prediction: Difficulty=262 (Good luck!)
 IP ID Sequence Generation: All zeros
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
-TRACEROUTE (using port 80/tcp)
+TRACEROUTE (using port 1025/tcp)
 HOP RTT       ADDRESS
 1   ...
-2   3.38 ms   27.7.96.1
-3   3.40 ms   202.88.156.61
-4   5.27 ms   136.232.28.189
+2   4.52 ms   27.7.96.1
+3   4.33 ms   202.88.156.61
+4   4.36 ms   136.232.28.189
 5   ... 7
-8   229.35 ms 49.45.4.103
-9   226.26 ms 103.198.140.15
-10  215.04 ms 38.104.85.57
-11  216.21 ms 154.54.27.117
-12  235.50 ms 154.54.31.190
-13  235.54 ms 154.54.3.138
-14  222.61 ms 38.142.11.154
-15  225.18 ms 173.230.159.67
-16  222.87 ms 45.33.32.156
+8   219.14 ms 49.45.4.85
+9   215.38 ms 103.198.140.83
+10  215.60 ms 38.104.84.209
+11  220.07 ms 154.54.27.117
+12  223.53 ms 154.54.31.190
+13  233.01 ms 154.54.1.162
+14  229.72 ms 38.142.11.154
+15  229.66 ms 173.230.159.65
+16  229.56 ms 45.33.32.156
 
 NSE: Script Post-scanning.
-Initiating NSE at 11:44
-Completed NSE at 11:44, 0.00s elapsed
-Initiating NSE at 11:44
-Completed NSE at 11:44, 0.00s elapsed
+Initiating NSE at 14:47
+Completed NSE at 14:47, 0.00s elapsed
+Initiating NSE at 14:47
+Completed NSE at 14:47, 0.00s elapsed
 Read data files from: /usr/bin/../share/nmap
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 47.77 seconds
-           Raw packets sent: 1150 (52.196KB) | Rcvd: 1102 (45.990KB)
+Nmap done: 1 IP address (1 host up) scanned in 49.03 seconds
+           Raw packets sent: 1177 (55.184KB) | Rcvd: 1110 (45.666KB)
 
 Wait please.....
 
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
+
+#############################################################################
 
 Please enter your choice: 6
 
 you chose choice 6
 
+#############################################################################
 
 Running nmap TCP connect scan.....
 
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-30 11:46 IST
-Initiating Ping Scan at 11:46
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-31 14:48 IST
+Initiating Ping Scan at 14:48
 Scanning 45.33.32.156 [4 ports]
-Completed Ping Scan at 11:46, 0.26s elapsed (1 total hosts)
-Initiating Connect Scan at 11:46
+Completed Ping Scan at 14:48, 0.26s elapsed (1 total hosts)
+Initiating Connect Scan at 14:48
 Scanning 45.33.32.156 [1000 ports]
 Discovered open port 22/tcp on 45.33.32.156
 Discovered open port 80/tcp on 45.33.32.156
 Discovered open port 31337/tcp on 45.33.32.156
 Discovered open port 9929/tcp on 45.33.32.156
-Completed Connect Scan at 11:46, 25.83s elapsed (1000 total ports)
+Completed Connect Scan at 14:48, 37.69s elapsed (1000 total ports)
 Nmap scan report for 45.33.32.156
 Host is up (0.23s latency).
-Not shown: 993 closed ports
+Not shown: 991 closed ports
 PORT      STATE    SERVICE
 22/tcp    open     ssh
 80/tcp    open     http
 139/tcp   filtered netbios-ssn
 445/tcp   filtered microsoft-ds
+1720/tcp  filtered h323q931
+5060/tcp  filtered sip
 5900/tcp  filtered vnc
 9929/tcp  open     nping-echo
 31337/tcp open     Elite
 
 Read data files from: /usr/bin/../share/nmap
-Nmap done: 1 IP address (1 host up) scanned in 26.21 seconds
-           Raw packets sent: 4 (152B) | Rcvd: 1 (40B)
-
-Wait please.....
-
-
-Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
-
-Please enter your choice: 7
-
-you chose choice 7
-
-
-Running nmap SYN stealth scan.....
-
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-30 11:47 IST
-Initiating Ping Scan at 11:47
-Scanning 45.33.32.156 [4 ports]
-Completed Ping Scan at 11:47, 0.26s elapsed (1 total hosts)
-Initiating SYN Stealth Scan at 11:47
-Scanning 45.33.32.156 [1000 ports]
-Discovered open port 22/tcp on 45.33.32.156
-Discovered open port 80/tcp on 45.33.32.156
-Discovered open port 9929/tcp on 45.33.32.156
-Discovered open port 31337/tcp on 45.33.32.156
-Completed SYN Stealth Scan at 11:47, 26.54s elapsed (1000 total ports)
-Nmap scan report for 45.33.32.156
-Host is up (0.24s latency).
-Not shown: 993 closed ports
-PORT      STATE    SERVICE
-22/tcp    open     ssh
-80/tcp    open     http
-139/tcp   filtered netbios-ssn
-445/tcp   filtered microsoft-ds
-5900/tcp  filtered vnc
-9929/tcp  open     nping-echo
-31337/tcp open     Elite
-
-Read data files from: /usr/bin/../share/nmap
-Nmap done: 1 IP address (1 host up) scanned in 26.98 seconds
-           Raw packets sent: 1080 (47.496KB) | Rcvd: 1065 (42.616KB)
-
-Wait please.....
-
-
-Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
-
-Please enter your choice: 8
-
-you chose choice 8
-
-
-Running nmap Xmas scan.....
-
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-30 11:48 IST
-Initiating Ping Scan at 11:48
-Scanning 45.33.32.156 [4 ports]
-Completed Ping Scan at 11:48, 0.26s elapsed (1 total hosts)
-Initiating XMAS Scan at 11:48
-Scanning 45.33.32.156 [1000 ports]
-Completed XMAS Scan at 11:48, 15.60s elapsed (1000 total ports)
-Nmap scan report for 45.33.32.156
-Host is up (0.23s latency).
-All 1000 scanned ports on 45.33.32.156 are open|filtered
-
-Read data files from: /usr/bin/../share/nmap
-Nmap done: 1 IP address (1 host up) scanned in 16.01 seconds
-           Raw packets sent: 2012 (80.504KB) | Rcvd: 9 (360B)
-
-Wait please.....
-
-
-Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
-
-Please enter your choice: 9
-
-you chose choice 9
-
-
-Running nmap Null scan.....
-
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-30 11:52 IST
-Initiating Ping Scan at 11:52
-Scanning 45.33.32.156 [4 ports]
-Completed Ping Scan at 11:52, 0.28s elapsed (1 total hosts)
-Initiating NULL Scan at 11:52
-Scanning 45.33.32.156 [1000 ports]
-Completed NULL Scan at 11:52, 14.91s elapsed (1000 total ports)
-Nmap scan report for 45.33.32.156
-Host is up (0.23s latency).
-All 1000 scanned ports on 45.33.32.156 are open|filtered
-
-Read data files from: /usr/bin/../share/nmap
-Nmap done: 1 IP address (1 host up) scanned in 15.36 seconds
-           Raw packets sent: 2013 (80.548KB) | Rcvd: 11 (440B)
-
-Wait please.....
-
-
-Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
-
-Please enter your choice: 10
-
-you chose choice 10
-
-
-Running nmap Ping scan.....
-
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-30 11:54 IST
-Initiating Ping Scan at 11:54
-Scanning 45.33.32.156 [4 ports]
-Completed Ping Scan at 11:54, 0.27s elapsed (1 total hosts)
-Nmap scan report for 45.33.32.156
-Host is up (0.23s latency).
-Read data files from: /usr/bin/../share/nmap
-Nmap done: 1 IP address (1 host up) scanned in 0.30 seconds
+Nmap done: 1 IP address (1 host up) scanned in 38.06 seconds
            Raw packets sent: 4 (152B) | Rcvd: 1 (28B)
 
 Wait please.....
@@ -368,26 +293,73 @@ Wait please.....
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
 
-Please enter your choice: 11
+#############################################################################
 
-you chose choice 11
+Please enter your choice: 7
 
+you chose choice 7
 
-Running nmap FIN scan.....
+#############################################################################
 
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-30 11:55 IST
-Initiating Ping Scan at 11:55
+Running nmap SYN stealth scan.....
+
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-31 14:49 IST
+Initiating Ping Scan at 14:49
 Scanning 45.33.32.156 [4 ports]
-Completed Ping Scan at 11:55, 0.26s elapsed (1 total hosts)
-Initiating FIN Scan at 11:55
+Completed Ping Scan at 14:49, 0.27s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 14:49
 Scanning 45.33.32.156 [1000 ports]
-Completed FIN Scan at 11:55, 16.46s elapsed (1000 total ports)
+Discovered open port 80/tcp on 45.33.32.156
+Discovered open port 22/tcp on 45.33.32.156
+Discovered open port 31337/tcp on 45.33.32.156
+Discovered open port 9929/tcp on 45.33.32.156
+Completed SYN Stealth Scan at 14:49, 24.36s elapsed (1000 total ports)
 Nmap scan report for 45.33.32.156
-Host is up (0.24s latency).
+Host is up (0.23s latency).
+Not shown: 991 closed ports
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+139/tcp   filtered netbios-ssn
+445/tcp   filtered microsoft-ds
+1720/tcp  filtered h323q931
+5060/tcp  filtered sip
+5900/tcp  filtered vnc
+9929/tcp  open     nping-echo
+31337/tcp open     Elite
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 24.76 seconds
+           Raw packets sent: 1102 (48.464KB) | Rcvd: 1076 (43.056KB)
+
+Wait please.....
+
+
+Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
+
+#############################################################################
+
+Please enter your choice: 8
+
+you chose choice 8
+
+#############################################################################
+
+Running nmap Xmas scan.....
+
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-31 14:50 IST
+Initiating Ping Scan at 14:50
+Scanning 45.33.32.156 [4 ports]
+Completed Ping Scan at 14:50, 0.26s elapsed (1 total hosts)
+Initiating XMAS Scan at 14:50
+Scanning 45.33.32.156 [1000 ports]
+Completed XMAS Scan at 14:51, 14.97s elapsed (1000 total ports)
+Nmap scan report for 45.33.32.156
+Host is up (0.23s latency).
 All 1000 scanned ports on 45.33.32.156 are open|filtered
 
 Read data files from: /usr/bin/../share/nmap
-Nmap done: 1 IP address (1 host up) scanned in 16.86 seconds
+Nmap done: 1 IP address (1 host up) scanned in 15.38 seconds
            Raw packets sent: 2013 (80.548KB) | Rcvd: 10 (400B)
 
 Wait please.....
@@ -395,108 +367,207 @@ Wait please.....
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
 
-Please enter your choice: 12
+#############################################################################
 
-you chose choice 12
+Please enter your choice: 9
 
+you chose choice 9
 
-Running nmap UDP scan.....
+#############################################################################
 
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-30 11:55 IST
-Initiating Ping Scan at 11:55
+Running nmap Null scan.....
+
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-31 14:51 IST
+Initiating Ping Scan at 14:51
 Scanning 45.33.32.156 [4 ports]
-Completed Ping Scan at 11:56, 0.28s elapsed (1 total hosts)
-Initiating UDP Scan at 11:56
+Completed Ping Scan at 14:51, 0.27s elapsed (1 total hosts)
+Initiating NULL Scan at 14:51
 Scanning 45.33.32.156 [1000 ports]
-Increasing send delay for 45.33.32.156 from 0 to 50 due to 11 out of 19 dropped probes since last increase.
-Increasing send delay for 45.33.32.156 from 50 to 100 due to max_successful_tryno increase to 5
-Increasing send delay for 45.33.32.156 from 100 to 200 due to max_successful_tryno increase to 6
-Warning: 45.33.32.156 giving up on port because retransmission cap hit (6).
-UDP Scan Timing: About 7.71% done; ETC: 12:02 (0:06:11 remaining)
-Increasing send delay for 45.33.32.156 from 200 to 400 due to 11 out of 19 dropped probes since last increase.
-Increasing send delay for 45.33.32.156 from 400 to 800 due to 11 out of 11 dropped probes since last increase.
-UDP Scan Timing: About 11.44% done; ETC: 12:04 (0:07:52 remaining)
-UDP Scan Timing: About 14.43% done; ETC: 12:06 (0:09:00 remaining)
-UDP Scan Timing: About 17.80% done; ETC: 12:07 (0:09:33 remaining)
-UDP Scan Timing: About 37.29% done; ETC: 12:10 (0:08:57 remaining)
-UDP Scan Timing: About 44.00% done; ETC: 12:10 (0:08:14 remaining)
-UDP Scan Timing: About 49.60% done; ETC: 12:10 (0:07:29 remaining)
-Discovered open port 123/udp on 45.33.32.156
-UDP Scan Timing: About 55.21% done; ETC: 12:10 (0:06:42 remaining)
-UDP Scan Timing: About 60.64% done; ETC: 12:11 (0:05:57 remaining)
-UDP Scan Timing: About 66.33% done; ETC: 12:11 (0:05:11 remaining)
+NULL Scan Timing: About 13.05% done; ETC: 14:55 (0:03:27 remaining)
+NULL Scan Timing: About 26.15% done; ETC: 14:55 (0:02:52 remaining)
+NULL Scan Timing: About 39.00% done; ETC: 14:55 (0:02:22 remaining)
+NULL Scan Timing: About 52.10% done; ETC: 14:55 (0:01:51 remaining)
+NULL Scan Timing: About 65.30% done; ETC: 14:55 (0:01:20 remaining)
+NULL Scan Timing: About 78.50% done; ETC: 14:55 (0:00:50 remaining)
+Completed NULL Scan at 14:55, 231.38s elapsed (1000 total ports)
+Nmap scan report for 45.33.32.156
+Host is up (0.23s latency).
+All 1000 scanned ports on 45.33.32.156 are open|filtered
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 231.80 seconds
+           Raw packets sent: 2004 (80.152KB) | Rcvd: 1 (28B)
 
 Wait please.....
 
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
+
+#############################################################################
+
+Please enter your choice: 10
+
+you chose choice 10
+
+#############################################################################
+
+Running nmap Ping scan.....
+
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-31 14:57 IST
+Initiating Ping Scan at 14:57
+Scanning 45.33.32.156 [4 ports]
+Completed Ping Scan at 14:57, 0.26s elapsed (1 total hosts)
+Nmap scan report for 45.33.32.156
+Host is up (0.23s latency).
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.30 seconds
+           Raw packets sent: 4 (152B) | Rcvd: 1 (40B)
+
+Wait please.....
+
+
+Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
+
+#############################################################################
+
+Please enter your choice: 11
+
+you chose choice 11
+
+#############################################################################
+
+Running nmap FIN scan.....
+
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-31 14:58 IST
+Initiating Ping Scan at 14:58
+Scanning 45.33.32.156 [4 ports]
+Completed Ping Scan at 14:58, 0.26s elapsed (1 total hosts)
+Initiating FIN Scan at 14:58
+Scanning 45.33.32.156 [1000 ports]
+Completed FIN Scan at 14:58, 15.93s elapsed (1000 total ports)
+Nmap scan report for 45.33.32.156
+Host is up (0.23s latency).
+All 1000 scanned ports on 45.33.32.156 are open|filtered
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 16.35 seconds
+           Raw packets sent: 2012 (80.504KB) | Rcvd: 9 (360B)
+
+Wait please.....
+
+
+Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
+
+#############################################################################
+
+Please enter your choice: 12
+
+you chose choice 12
+
+#############################################################################
+
+Running nmap UDP scan.....
+
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-31 14:59 IST
+Initiating Ping Scan at 14:59
+Scanning 45.33.32.156 [4 ports]
+Completed Ping Scan at 14:59, 0.26s elapsed (1 total hosts)
+Initiating UDP Scan at 14:59
+Scanning 45.33.32.156 [1000 ports]
+UDP Scan Timing: About 13.50% done; ETC: 15:03 (0:03:19 remaining)
+Discovered open port 123/udp on 45.33.32.156
+Completed UDP Scan at 15:00, 55.61s elapsed (1000 total ports)
+Nmap scan report for 45.33.32.156
+Host is up (0.23s latency).
+Not shown: 999 open|filtered ports
+PORT    STATE SERVICE
+123/udp open  ntp
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 56.03 seconds
+           Raw packets sent: 2010 (58.462KB) | Rcvd: 9 (636B)
+
+Wait please.....
+
+
+Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
+
+#############################################################################
 
 Please enter your choice: 13
 
 you chose choice 13
 
+#############################################################################
 
 Running nmap ACK scan.....
 
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-30 12:13 IST
-Initiating Ping Scan at 12:13
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-31 15:03 IST
+Initiating Ping Scan at 15:03
 Scanning 45.33.32.156 [4 ports]
-Completed Ping Scan at 12:13, 0.26s elapsed (1 total hosts)
-Initiating ACK Scan at 12:13
+Completed Ping Scan at 15:03, 0.27s elapsed (1 total hosts)
+Initiating ACK Scan at 15:03
 Scanning 45.33.32.156 [1000 ports]
-Completed ACK Scan at 12:13, 22.38s elapsed (1000 total ports)
+Completed ACK Scan at 15:03, 20.37s elapsed (1000 total ports)
 Nmap scan report for 45.33.32.156
-Host is up (0.23s latency).
-Not shown: 997 unfiltered ports
+Host is up (0.24s latency).
+Not shown: 995 unfiltered ports
 PORT     STATE    SERVICE
 139/tcp  filtered netbios-ssn
 445/tcp  filtered microsoft-ds
+1720/tcp filtered h323q931
+5060/tcp filtered sip
 5900/tcp filtered vnc
 
 Read data files from: /usr/bin/../share/nmap
-Nmap done: 1 IP address (1 host up) scanned in 22.78 seconds
-           Raw packets sent: 1068 (42.712KB) | Rcvd: 1053 (42.120KB)
+Nmap done: 1 IP address (1 host up) scanned in 20.77 seconds
+           Raw packets sent: 1089 (43.552KB) | Rcvd: 1064 (42.560KB)
 
 Wait please.....
 
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
 
+#############################################################################
+
 Please enter your choice: 14
 
 you chose choice 14
 
+#############################################################################
 
 Running nmap version detection scan.....
 
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-30 12:14 IST
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-31 15:04 IST
 NSE: Loaded 43 scripts for scanning.
-Initiating Ping Scan at 12:14
+Initiating Ping Scan at 15:04
 Scanning 45.33.32.156 [4 ports]
-Completed Ping Scan at 12:14, 0.25s elapsed (1 total hosts)
-Initiating SYN Stealth Scan at 12:14
+Completed Ping Scan at 15:04, 0.26s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 15:04
 Scanning 45.33.32.156 [1000 ports]
-Discovered open port 80/tcp on 45.33.32.156
 Discovered open port 22/tcp on 45.33.32.156
-Discovered open port 31337/tcp on 45.33.32.156
+Discovered open port 80/tcp on 45.33.32.156
 Discovered open port 9929/tcp on 45.33.32.156
-Completed SYN Stealth Scan at 12:14, 22.40s elapsed (1000 total ports)
-Initiating Service scan at 12:14
+Discovered open port 31337/tcp on 45.33.32.156
+Completed SYN Stealth Scan at 15:05, 24.79s elapsed (1000 total ports)
+Initiating Service scan at 15:05
 Scanning 4 services on 45.33.32.156
-Completed Service scan at 12:14, 6.79s elapsed (4 services on 1 host)
+Completed Service scan at 15:05, 6.60s elapsed (4 services on 1 host)
 NSE: Script scanning 45.33.32.156.
-Initiating NSE at 12:14
-Completed NSE at 12:14, 1.14s elapsed
-Initiating NSE at 12:14
-Completed NSE at 12:14, 0.00s elapsed
+Initiating NSE at 15:05
+Completed NSE at 15:05, 1.15s elapsed
+Initiating NSE at 15:05
+Completed NSE at 15:05, 0.00s elapsed
 Nmap scan report for 45.33.32.156
 Host is up (0.24s latency).
-Not shown: 993 closed ports
+Not shown: 991 closed ports
 PORT      STATE    SERVICE      VERSION
 22/tcp    open     ssh          OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
 80/tcp    open     http         Apache httpd 2.4.7 ((Ubuntu))
 139/tcp   filtered netbios-ssn
 445/tcp   filtered microsoft-ds
+1720/tcp  filtered h323q931
+5060/tcp  filtered sip
 5900/tcp  filtered vnc
 9929/tcp  open     nping-echo   Nping echo
 31337/tcp open     tcpwrapped
@@ -504,64 +575,76 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Read data files from: /usr/bin/../share/nmap
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 31.54 seconds
-           Raw packets sent: 1089 (47.892KB) | Rcvd: 1077 (43.096KB)
+Nmap done: 1 IP address (1 host up) scanned in 33.60 seconds
+           Raw packets sent: 1102 (48.460KB) | Rcvd: 1077 (43.096KB)
 
 Wait please.....
 
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
+
+#############################################################################
 
 Please enter your choice: 15
 
 you chose choice 15
 
+#############################################################################
 
 Running nmap OS fingerprinting scan.....
 
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-30 12:15 IST
-Initiating Ping Scan at 12:15
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-07-31 15:08 IST
+Initiating Ping Scan at 15:08
 Scanning 45.33.32.156 [4 ports]
-Completed Ping Scan at 12:15, 0.26s elapsed (1 total hosts)
-Initiating SYN Stealth Scan at 12:15
+Completed Ping Scan at 15:08, 0.27s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 15:08
 Scanning 45.33.32.156 [1000 ports]
-Discovered open port 22/tcp on 45.33.32.156
 Discovered open port 80/tcp on 45.33.32.156
-Discovered open port 31337/tcp on 45.33.32.156
+Discovered open port 22/tcp on 45.33.32.156
 Discovered open port 9929/tcp on 45.33.32.156
-Completed SYN Stealth Scan at 12:15, 20.78s elapsed (1000 total ports)
+Discovered open port 31337/tcp on 45.33.32.156
+Completed SYN Stealth Scan at 15:09, 20.55s elapsed (1000 total ports)
 Initiating OS detection (try #1) against 45.33.32.156
 Retrying OS detection (try #2) against 45.33.32.156
 Nmap scan report for 45.33.32.156
 Host is up (0.23s latency).
-Not shown: 993 closed ports
+Not shown: 991 closed ports
 PORT      STATE    SERVICE
 22/tcp    open     ssh
 80/tcp    open     http
 139/tcp   filtered netbios-ssn
 445/tcp   filtered microsoft-ds
+1720/tcp  filtered h323q931
+5060/tcp  filtered sip
 5900/tcp  filtered vnc
 9929/tcp  open     nping-echo
 31337/tcp open     Elite
-Aggressive OS guesses: HP P2000 G3 NAS device (93%), OpenWrt 12.09-rc1 Attitude Adjustment (Linux 3.3 - 3.7) (93%), Linux 2.6.32 (92%), Infomir MAG-250 set-top box (92%), Linux 3.7 (92%), Ubiquiti AirOS 5.5.9 (92%), Ubiquiti Pico Station WAP (AirOS 5.2.6) (92%), Linux 2.6.32 - 3.13 (92%), Linux 3.3 (92%), Linux 3.13 or 4.2 (91%)
+Device type: broadband router|storage-misc|general purpose|media device|WAP
+Running (JUST GUESSING): Linux 3.X|2.6.X|4.X (91%), HP embedded (91%), Infomir embedded (90%), Ubiquiti embedded (90%), Ubiquiti AirOS 5.X (90%)
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/h:hp:p2000_g3 cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:linux:linux_kernel:2.6 cpe:/h:infomir:mag-250 cpe:/h:ubnt:airmax_nanostation cpe:/o:ubnt:airos:5.5.9 cpe:/o:linux:linux_kernel:4.2
+Aggressive OS guesses: OpenWrt 12.09-rc1 Attitude Adjustment (Linux 3.3 - 3.7) (91%), HP P2000 G3 NAS device (91%), Linux 2.6.32 (90%), Linux 2.6.32 - 3.1 (90%), Infomir MAG-250 set-top box (90%), Ubiquiti AirMax NanoStation WAP (Linux 2.6.32) (90%), Linux 3.7 (90%), Ubiquiti AirOS 5.5.9 (90%), Ubiquiti Pico Station WAP (AirOS 5.2.6) (89%), Linux 2.6.32 - 3.13 (89%)
 No exact OS matches for host (test conditions non-ideal).
-Uptime guess: 13.867 days (since Tue Jul 16 15:27:04 2019)
-Network Distance: 16 hops
-TCP Sequence Prediction: Difficulty=259 (Good luck!)
+Uptime guess: 16.128 days (since Mon Jul 15 12:04:54 2019)
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
 IP ID Sequence Generation: All zeros
 
 Read data files from: /usr/bin/../share/nmap
 OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 27.71 seconds
-           Raw packets sent: 1165 (52.952KB) | Rcvd: 1127 (46.476KB)
+Nmap done: 1 IP address (1 host up) scanned in 27.04 seconds
+           Raw packets sent: 1154 (54.172KB) | Rcvd: 1090 (44.352KB)
 
 Wait please.....
 
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
 
+#############################################################################
+
+Please enter your choice: 16
+
 you chose choice 16
 
+#############################################################################
 
 Running whois.....
 
@@ -595,7 +678,6 @@ Comment:        http://www.linode.com
 Ref:            https://rdap.arin.net/registry/ip/45.33.0.0
 
 
-
 OrgName:        Linode
 OrgId:          LINOD
 Address:        249 Arch St
@@ -615,17 +697,17 @@ OrgNOCPhone:  +1-609-380-7304
 OrgNOCEmail:  support@linode.com
 OrgNOCRef:    https://rdap.arin.net/registry/entity/LNO21-ARIN
 
-OrgAbuseHandle: LAS12-ARIN
-OrgAbuseName:   Linode Abuse Support
-OrgAbusePhone:  +1-609-380-7100 
-OrgAbuseEmail:  abuse@linode.com
-OrgAbuseRef:    https://rdap.arin.net/registry/entity/LAS12-ARIN
-
 OrgTechHandle: LNO21-ARIN
 OrgTechName:   Linode Network Operations
 OrgTechPhone:  +1-609-380-7304 
 OrgTechEmail:  support@linode.com
 OrgTechRef:    https://rdap.arin.net/registry/entity/LNO21-ARIN
+
+OrgAbuseHandle: LAS12-ARIN
+OrgAbuseName:   Linode Abuse Support
+OrgAbusePhone:  +1-609-380-7100 
+OrgAbuseEmail:  abuse@linode.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/LAS12-ARIN
 
 
 #
@@ -644,11 +726,13 @@ Wait please.....
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
 
+#############################################################################
 
 Please enter your choice: 17
 
 you chose choice 17
 
+#############################################################################
 
 Running enum4linux.....
 
@@ -658,7 +742,7 @@ Running enum4linux.....
 [V] Dependent program "smbclient" found in /usr/bin/smbclient
 [V] Dependent program "polenum" found in /usr/bin/polenum
 [V] Dependent program "ldapsearch" found in /usr/bin/ldapsearch
-Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Tue Jul 30 16:52:22 2019
+Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Wed Jul 31 15:11:17 2019
 
  ========================== 
 |    Target Information    |
@@ -1025,7 +1109,7 @@ S-1-5-21-1042354039-2475377354-766472396-1050 *unknown*\*unknown* (8)
 No printers returned.
 
 
-enum4linux complete on Tue Jul 30 16:52:34 2019
+enum4linux complete on Wed Jul 31 15:11:29 2019
 
 
 Wait please.....
@@ -1034,7 +1118,151 @@ Use of uninitialized value $os_info in concatenation (.) or string at ./enum4lin
 
 Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
 
-Please enter your choice: 19
-invalid option 19
+#############################################################################
+
 Please enter your choice: 18
+
+you chose choice 18
+
+#############################################################################
+
+Running dnsenum.....
+
+Smartmatch is experimental at /usr/bin/dnsenum line 698.
+Smartmatch is experimental at /usr/bin/dnsenum line 698.
+dnsenum VERSION:1.2.4
+
+-----   google.com   -----
+
+
+Host's addresses:
+__________________
+
+google.com.                              107      IN    A        216.58.200.142
+
+
+Name Servers:
+______________
+
+ns1.google.com.                          123636   IN    A        216.239.32.10
+ns2.google.com.                          129209   IN    A        216.239.34.10
+ns3.google.com.                          153585   IN    A        216.239.36.10
+ns4.google.com.                          153585   IN    A        216.239.38.10
+
+
+Mail (MX) Servers:
+___________________
+
+alt3.ASPMX.l.google.com.                 228      IN    A        74.125.129.27
+ALT4.ASPMX.l.google.com.                 175      IN    A        64.233.177.26
+alt2.ASPMX.l.google.com.                 288      IN    A        108.177.9.27
+alt1.ASPMX.l.google.com.                 204      IN    A        74.125.199.27
+ASPMX.l.google.com.                      76       IN    A        74.125.68.27
+
+
+Trying Zone Transfers and getting Bind Versions:
+_________________________________________________
+
+
+Trying Zone Transfer for google.com on ns4.google.com ... 
+AXFR record query failed: corrupt packet
+
+Trying Zone Transfer for google.com on ns2.google.com ... 
+AXFR record query failed: corrupt packet
+
+Trying Zone Transfer for google.com on ns3.google.com ... 
+AXFR record query failed: corrupt packet
+
+Trying Zone Transfer for google.com on ns1.google.com ... 
+AXFR record query failed: corrupt packet
+
+brute force file not specified, bay.
+
+Wait please.....
+
+Smartmatch is experimental at /usr/bin/dnsenum line 698.
+Smartmatch is experimental at /usr/bin/dnsenum line 698.
+AXFR record query failed: corrupt packet
+AXFR record query failed: corrupt packet
+AXFR record query failed: corrupt packet
+AXFR record query failed: corrupt packet
+
+Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
+
+#############################################################################
+
+Please enter your choice: 19
+
+you chose choice 19
+
+
+Running smbclient.....
+
+#############################################################################
+Enter WORKGROUP\root's password: 
+Anonymous login successful
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	print$          Disk      Printer Drivers
+	tmp             Disk      oh noes!
+	opt             Disk      
+	IPC$            IPC       IPC Service (metasploitable server (Samba 3.0.20-Debian))
+	ADMIN$          IPC       IPC Service (metasploitable server (Samba 3.0.20-Debian))
+Reconnecting with SMB1 for workgroup listing.
+Anonymous login successful
+
+	Server               Comment
+	---------            -------
+
+	Workgroup            Master
+	---------            -------
+	WORKGROUP            METASPLOITABLE
+
+
+Check above for smbclient run-time output !!
+
+#############################################################################
+
+you chose choice 20
+
+#############################################################################
+
+Running nbtscan.....
+
+Doing NBT name scan for addresses from 192.168.1.0/24
+
+IP address       NetBIOS Name     Server    User             MAC address      
+------------------------------------------------------------------------------
+192.168.1.0	Sendto failed: Permission denied
+192.168.1.7      <unknown>                  <unknown>        
+192.168.1.9      METASPLOITABLE   <server>  METASPLOITABLE   00:00:00:00:00:00
+192.168.1.255	Sendto failed: Permission denied
+
+Wait please.....
+
+192.168.1.0	Sendto failed: Permission denied
+192.168.1.255	Sendto failed: Permission denied
+
+Mr/Mrs Sumit, you can check /root/Desktop/bashscripts/Sumit folder for output
+
+#############################################################################
+
+Please enter your choice: 21
+#############################################################################
+
+Quitting.....
+
+#############################################################################
+
+Please enter your choice: 22
+#############################################################################
+
+Invalid option 22
+
+Scroll up & try options available above !!
+ 
+#############################################################################
+
 root@Kali:~/Desktop/bashscripts# 
+
