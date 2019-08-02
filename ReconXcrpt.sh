@@ -11,7 +11,7 @@ toilet -t -F metal ReconXcrpt
 echo -e "\n"
 #toilet -t -F gay ReconXcrpt
 echo -e "<< Welcome.2.ReconXcrpt >>\n"
-echo -e "ReconXcrpt >> An ethical-hacking-framework providing beginners to play with various reconnaissance tools.\n\n"
+echo -e "ReconXcrpt >> A Reconnaissance-Framework providing beginners to play with various reconnaissance tools.\n\n"
 
 #-------------------------------------------------------------------------
 
@@ -23,21 +23,89 @@ mkdir /root/Desktop/bashscripts/$name
 netd()
 {
   echo -e "\nRunning netdiscover.....\n" 
-  `netdiscover -r 192.168.1.0/24 -PN >/root/Desktop/bashscripts/$name/netdiscover.txt`
-
-   cat netdiscover.txt | awk '{print $1}'
+   netdiscover -r 192.168.0.0/24 -PN
+  `netdiscover -r 192.168.0.0/24 -PN >/root/Desktop/bashscripts/$name/netdiscover.txt`
   
 }
 
 #--------------------------------------------------------------------------
 
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+kamal()
+{
+             echo -e "\nMr/Mrs $name,you can try following options:\n "
+              
+                 PS3="Enter your options:"
+                 select op in Whois Archive Shodan Censys Pipl Beenverified  Wireshark Tcpdump Quit
+                 do 
+                 case $op in
+                 Whois)
+                  a="https://www.whois.com/whois/"
+                  firefox "$a" 
+                  echo "done" 
+                  echo " "
+                  kamal;;
+                
+                 Archive)
+                  b="https://archive.org/" 
+                  firefox "$b"
+                  echo "done" 
+                  echo " "
+                  kamal;;
+                 Shodan)
+                  c="https://www.shodan.io/"
+                  firefox "$c"
+                  echo "done" 
+                  echo " "
+                  kamal;;
+                 Censys)
+                  d="https://censys.io/"
+                  firefox "$d" 
+                  echo "done"
+                  echo " "
+                  kamal;;
+                 Pipl)
+                  e="https://pipl.com/"
+                  firefox "$e" 
+                  echo " "
+                  echo "done" 
+                  kamal;;
+                 Beenverified)
+                  f="https://www.beenverified.com/"
+                  firefox "$f" 
+                  echo " "
+                  echo "done" 
+                  kamal;;
+                 Wireshark)
+                  g="wireshark"
+                  echo $g 
+                  echo "done" 
+                  echo " "
+                  kamal;;
+                 Tcpdump) 
+                  xterm -geometry 100x50+0+0 -fa 'Monospace' -fs 14  -hold -e 'tcpdump'
+                  echo "done" 
+                  echo " "
+                  kamal;;
+                 Quit)
+                  echo -e "\nquitting.....\n"
+                  main;;
+                  *)
+                  echo "invalid option...try again" 
+                  kamal;;  
+            esac
+            done
+          
+}
+
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 sumit()
 {
 
-
-
-echo -e "\nMr/Mrs $name,you can try any one of the options:\n "
+echo -e "\nMr/Mrs $name,you can try following options:\n "
 
 
 PS3='Please enter your choice: '
@@ -157,7 +225,7 @@ do
 #-------------------------------------------------------------------------
         "Quit")
             
-            echo -e "\nQuitting.....\n"
+            echo -e "\nquitting.....\n"
                       
             main
             
@@ -191,15 +259,17 @@ then
 echo enter you option
 echo 1.scanning
 echo 2.scripts
+echo 3.quit
 read op2
 while [ "$op2" > "0" ]
 do
+#...............................
 if [ "$op2" = "1" ]
 then
 
 echo "netdiscover running...."
 sleep 5s
-`netdiscover -r 192.168.1.0/24 -PN >netdiscover.txt`
+`netdiscover -r 192.168.0.0/24 -PN >netdiscover.txt`
 
 cat netdiscover.txt | awk '{print $1}'
 
@@ -532,7 +602,7 @@ then
 		echo "-------------thankyou-------------"
 		unset op2
 		#break
-                main
+                michael
 	fi
 	
 else
@@ -548,7 +618,7 @@ then
 	op4=1
 	echo "netdiscover running...."
 	sleep 5s
-	`netdiscover -r 192.168.1.0/24 -PN >netdiscover.txt`
+	`netdiscover -r 192.168.0.0/24 -PN >netdiscover.txt`
 
 	cat netdiscover.txt | awk '{print $1}'
 	
@@ -636,13 +706,21 @@ then
 			echo "-------------thankyou-------------"
 			unset op2
 			#break
-                        main
+                        michael
 		fi
 	else
 		op4=1
 	fi
 		
 done	
+#.............................
+elif [ "$op2" = "3" ]
+then
+    echo -e "\nquitting.....\n"
+    main
+
+
+#.............................
 else
 
 	echo "invalid option .... try again!"
@@ -658,33 +736,38 @@ done
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-#}
+
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 main()
 {
 
 PS3='Please enter your choice: '
-options=("Active Footprinting" "Scanning" "Quit")
+options=("Passive Reconnaissance" "Active Reconnaissance" "Scanning" "Exit")
 select opt in "${options[@]}"
 do
     case $opt in
 
-
-        "Reconnaissance")
-                  echo "Try Reconnaissance >>"
-                  sumit 
-                  echo "hello"
+        "Passive Reconnaissance")
+                  echo -e "\nTry Passive Reconnaissance >>"
+                  kamal 
                   ;;
+
+
+        "Active Reconnaissance")
+                  echo "\nTry Active Reconnaissance >>"
+                  sumit 
+                  ;;
+
         "Scanning")
                   echo "Try Scanning >>"
                   michael
                   ;;
 
-        "Quit")
+        "Exit")
                
                toilet -t -F gay ReconXcrpt
-               echo -e "\nQuitting ReconXcript.....\n"
+               echo -e "\nExiting ReconXcript.....\n"
                echo "--------thankyou---------"
 
                exit
