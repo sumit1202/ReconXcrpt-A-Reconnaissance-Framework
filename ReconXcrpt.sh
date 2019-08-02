@@ -749,18 +749,18 @@ do
     case $opt in
 
         "Passive Reconnaissance")
-                  echo -e "\nTry Passive Reconnaissance >>"
+                  echo -e "\nTry Passive Reconnaissance >>>"
                   kamal 
                   ;;
 
 
         "Active Reconnaissance")
-                  echo "\nTry Active Reconnaissance >>"
+                  echo -e "\nTry Active Reconnaissance >>>"
                   sumit 
                   ;;
 
         "Scanning")
-                  echo "Try Scanning >>"
+                  echo -e "\nTry Scanning >>>"
                   michael
                   ;;
 
@@ -768,8 +768,7 @@ do
                
                toilet -t -F gay ReconXcrpt
                echo -e "\nQuitting ReconXcript.....\n"
-               echo "--------thankyou---------"
-
+               echo -e "--------thankyou---------\n"
                exit
                ;;
 
