@@ -32,7 +32,8 @@ Enter your options: 9
 1) Passive Reconnaissance  3) Scanning
 2) Active Reconnaissance   4) Quit
 Please enter your choice: 2
-\nTry Active Reconnaissance >>
+
+Try Active Reconnaissance >>
 
 Mr/Mrs Sumit,you can try following options:
  
@@ -42,6 +43,7 @@ Please enter your choice: 9
 1) Passive Reconnaissance  3) Scanning
 2) Active Reconnaissance   4) Quit
 Please enter your choice: 3
+
 Try Scanning >>
 1.scanning
 2.scripts
