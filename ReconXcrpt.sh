@@ -5,94 +5,95 @@
 #Reconnaissance-Framework [Bash Menu Script Way]
 #ReconXcrpt,a reconnaissance framework providing beginners to play with various recon-related tools.
 
-#-------------------------------------------------------------------------
+#-------Framework welcome page------------------------------------------------------------------
 echo -e "\n"
-toilet -t -F metal ReconXcrpt
+toilet -t -F metal ReconXcrpt #banner
 echo -e "\n"
-#toilet -t -F gay ReconXcrpt
+
 echo -e "<< Welcome.2.ReconXcrpt >>\n"
 echo -e "ReconXcrpt >> A Reconnaissance-Framework providing beginners to play with various reconnaissance tools.\n\n"
 
 #-------------------------------------------------------------------------
 
-read -p "Please enter your name:" name
-mkdir /root/Desktop/bashscripts/$name
+read -p "Please enter your name: " name #taking usernmae
+mkdir /root/Desktop/$name # creating directory for given username and storing output
 
-#--------------------------------------------------------------------------
+#-----------------creating netdiscover fn-------------------------------------------------------
 
 netd()
 {
   echo -e "\nRunning netdiscover.....\n" 
-   netdiscover -r 192.168.0.0/24 -PN
-  `netdiscover -r 192.168.0.0/24 -PN >/root/Desktop/bashscripts/$name/netdiscover.txt`
+   netdiscover -r 192.168.1.0/24 -PN | awk '{print $1}'
+   netdiscover -r 192.168.0.0/24 -PN >/root/Desktop/$name/netdiscover.txt
   
 }
 
 #--------------------------------------------------------------------------
 
-#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@@@@@@@@@@@@@@@@@@@@@ Passive Footprinting fn @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 kamal()
 {
-             echo -e "\nMr/Mrs $name,you can try following options:\n "
+                 echo -e "\nMr/Mrs $name,you can try following options:\n "
               
-                 PS3="Enter your options:"
-                 select op in Whois Archive Shodan Censys Pipl Beenverified  Wireshark Tcpdump Quit
+                 PS3="Enter your options: "
+
+                 select op in whois archive shodan censys pipl beenverified  wireshark tcpdump back
                  do 
                  case $op in
-                 Whois)
+                 whois)
                   a="https://www.whois.com/whois/"
                   firefox "$a" 
                   echo "done" 
                   echo " "
                   kamal;;
                 
-                 Archive)
+                 archive)
                   b="https://archive.org/" 
                   firefox "$b"
                   echo "done" 
                   echo " "
                   kamal;;
-                 Shodan)
+                 shodan)
                   c="https://www.shodan.io/"
                   firefox "$c"
                   echo "done" 
                   echo " "
                   kamal;;
-                 Censys)
+                 censys)
                   d="https://censys.io/"
                   firefox "$d" 
                   echo "done"
                   echo " "
                   kamal;;
-                 Pipl)
+                 pipl)
                   e="https://pipl.com/"
                   firefox "$e" 
                   echo " "
                   echo "done" 
                   kamal;;
-                 Beenverified)
+                 beenverified)
                   f="https://www.beenverified.com/"
                   firefox "$f" 
                   echo " "
                   echo "done" 
                   kamal;;
-                 Wireshark)
+                 wireshark)
                   g="wireshark"
                   echo $g 
                   echo "done" 
                   echo " "
                   kamal;;
-                 Tcpdump) 
+                 tcpdump) 
                   xterm -geometry 100x50+0+0 -fa 'Monospace' -fs 14  -hold -e 'tcpdump'
                   echo "done" 
                   echo " "
                   kamal;;
-                 Quit)
-                  echo -e "\nquitting.....\n"
+                 back)
+                  
                   main;;
                   *)
-                  echo "invalid option...try again" 
+                  echo -e "\ninvalid option...try again\n" 
                   kamal;;  
             esac
             done
@@ -100,7 +101,7 @@ kamal()
 }
 
 
-#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@@@@@@@@@@@@@@@@@@@@@@@ Active Footprinting @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 sumit()
 {
@@ -109,7 +110,7 @@ echo -e "\nMr/Mrs $name,you can try following options:\n "
 
 
 PS3='Please enter your choice: '
-options=("ping" "nslookup" "traceroute" "whois" "enum4linux" "dnsenum" "smbclient" "nbtscan" "Quit")
+options=("ping" "nslookup" "traceroute" "whois" "enum4linux" "dnsenum" "smbclient" "nbtscan" "back")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -121,13 +122,13 @@ do
         "ping")
             
             netd
-            read -p "Enter ip:" target
+            read -p "Enter ip: " target
             
             echo -e "\nRunning ping.....\n"
    	    timeout 8 ping $target
             echo -e "\nWait Please.....\n"
-            timeout 8 ping $target > /root/Desktop/bashscripts/$name/ping.txt
-            echo -e "\nMr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"
+            timeout 8 ping $target > /root/Desktop/$name/ping.txt
+            echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
             
             sumit
             ;;
@@ -136,12 +137,12 @@ do
 
         "nslookup")
 
-            read -p "Enter domain/ip:" target
+            read -p "Enter domain/ip: " target
             echo -e "\nRunning nslookup.....\n"
    	    nslookup -type=any $target
             echo -e "\nWait Please.....\n"            
-            nslookup -type=any $target > /root/Desktop/bashscripts/$name/nslookup.txt
-            echo -e "\nMr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"
+            nslookup -type=any $target > /root/Desktop/$name/nslookup.txt
+            echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
             sumit
            ;;
 
@@ -149,12 +150,12 @@ do
 
   "traceroute")
 
-            read -p "Enter domain/ip:" target
+            read -p "Enter domain/ip: " target
             echo -e "\nRunning traceroute.....\n"
    	    traceroute $target
             echo -e "\nWait Please.....\n" 
-            traceroute $target > /root/Desktop/bashscripts/$name/traceroute.txt
-            echo -e "\nMr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"
+            traceroute $target > /root/Desktop/$name/traceroute.txt
+            echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
             sumit
            ;;
 
@@ -163,12 +164,12 @@ do
 
 
 "whois")
-            read -p "Enter domain/ip:" target
+            read -p "Enter domain/ip: " target
             echo -e "\nRunning whois.....\n"
    	    whois --verbose $target
             echo -e "\nWait Please.....\n"            
-            whois --verbose $target > /root/Desktop/bashscripts/$name/whois.txt
-            echo -e "\nMr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"
+            whois --verbose $target > /root/Desktop/$name/whois.txt
+            echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
             sumit
            ;;
 
@@ -176,24 +177,24 @@ do
 
 "enum4linux")
             netd
-            read -p "Enter ip:" target
+            read -p "Enter ip: " target
             echo -e "\nRunning enum4linux.....\n"
    	    enum4linux -v $target
             echo -e "\nWait Please.....\n" 
-            enum4linux -v $target > /root/Desktop/bashscripts/$name/enum4linux.txt
-            echo -e "\nMr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"    
+            enum4linux -v $target > /root/Desktop/$name/enum4linux.txt
+            echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"    
             sumit       
             ;;
 
 #-------------------------------------------------------------------------
 
 "dnsenum")
-            read -p "Enter domain/ip:" target
+            read -p "Enter domain/ip: " target
             echo -e "\nRunning dnsenum.....\n"
             dnsenum --noreverse $target
             echo -e "\nWait Please.....\n" 
-            dnsenum --noreverse $target > /root/Desktop/bashscripts/$name/dnsenum.txt
-            echo -e "\nMr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"
+            dnsenum --noreverse $target > /root/Desktop/$name/dnsenum.txt
+            echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
             sumit
             ;;
 
@@ -214,19 +215,17 @@ do
 
 "nbtscan")
             
-            echo -e "\nRunning nbtscan.....\n"
+            echo -e "\nRunning nbtscan for 192.168.1.0/24.....\n"
             
             nbtscan -r 192.168.1.0/24
             echo -e "\nWait please.....\n"
-            nbtscan -r $target > /root/Desktop/bashscripts/$name/nbtscan.txt
-            echo -e "\nMr/Mrs $name, you can check /root/Desktop/bashscripts/$name folder for output\n"
+            nbtscan -r $target > /root/Desktop/$name/nbtscan.txt
+            echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
             sumit
            ;;
 #-------------------------------------------------------------------------
-        "Quit")
-            
-            echo -e "\nquitting.....\n"
-                      
+        "back")
+                                
             main
             
             ;;
@@ -234,10 +233,9 @@ do
 #-------------------------------------------------------------------------
             *)
              
-             echo -e "\nInvalid option $REPLY"
-             echo -e "\nScroll up & try options available above\n "
+             echo -e "\ninvalid option...try again\n"
              
-             main
+             sumit
              ;;
 #-------------------------------------------------------------------------
 
@@ -256,11 +254,11 @@ while [ "$op7" > "0" ]
 do
 if [ "$op7" = "1" ]
 then
-echo enter you option
+#echo enter you option
 echo 1.scanning
 echo 2.scripts
-echo 3.quit
-read op2
+echo 3.back
+read -p "enter you option: " op2
 while [ "$op2" > "0" ]
 do
 #...............................
@@ -268,14 +266,11 @@ if [ "$op2" = "1" ]
 then
 
 echo "netdiscover running...."
-sleep 5s
-`netdiscover -r 192.168.0.0/24 -PN >netdiscover.txt`
-
-cat netdiscover.txt | awk '{print $1}'
+netd
 
 read -p "Enter the ip: " ip
 
-echo what scan do you want?
+echo -e "what scan do you want?\n"
 echo 1.synscan
 echo 2.ackscan
 echo 3.finscan
@@ -283,6 +278,7 @@ echo 4.xmasscan
 echo 5.tcpscan
 echo 6.nullscan
 echo 7.osscan
+echo 8.back
 
 read op1
 
@@ -299,7 +295,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 			then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sS -oN scan.txt -v -p$p1 $ip	
+			nmap -sS -oN /root/Desktop/$name/synscan.txt -v -p$p1 $ip	
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -317,7 +313,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 		then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sS -oN scan.txt -v $ip
+			nmap -sS -oN /root/Desktop/$name/synscan.txt -v $ip
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -341,7 +337,7 @@ then
 		then
 			read -p "enter the port: " p2
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sA -oN scan.txt -v -p$p2 $ip
+			nmap -sA -oN /root/Desktop/$name/ackscan.txt -v -p$p2 $ip
 		       	sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -360,7 +356,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 		then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sA -oN scan.txt  -v $ip
+			nmap -sA -oN /root/Desktop/$name/ackscan.txt  -v $ip
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -384,7 +380,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 		then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sF -oN scan.txt  -v -p$p3 $ip
+			nmap -sF -oN /root/Desktop/$name/finscan.txt  -v -p$p3 $ip
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -403,7 +399,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 		then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sF -oN scan.txt -v $ip
+			nmap -sF -oN /root/Desktop/$name/finscan.txt -v $ip
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -427,7 +423,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 		then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sX -oN scan.txt -v -p$p4 $ip
+			nmap -sX -oN /root/Desktop/$name/xmasscan.txt -v -p$p4 $ip
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -445,7 +441,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 		then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sX -oN scan.txt  -v $ip
+			nmap -sX -oN /root/Desktop/$name/xmasscan.txt  -v $ip
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -469,7 +465,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 			then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sT -oN scan.txt -v -p$p5 $ip	
+			nmap -sT -oN /root/Desktop/$name/tcpscan.txt -v -p$p5 $ip	
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -487,7 +483,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 		then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sT -oN scan.txt -v $ip
+			nmap -sT -oN /root/Desktop/$name/tcpscan.txt -v $ip
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -511,7 +507,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 			then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sN -oN scan.txt -v -p$p6 $ip	
+			nmap -sN -oN /root/Desktop/$name/nullscan.txt -v -p$p6 $ip	
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -529,7 +525,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 		then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -sN -oN scan.txt -v $ip
+			nmap -sN -oN /root/Desktop/$name/nullscan.txt -v $ip
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -553,7 +549,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 			then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -O -oN scan.txt -v -p$p7 $ip	
+			nmap -O -oN /root/Desktop/$name/osscan.txt -v -p$p7 $ip	
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -571,7 +567,7 @@ then
 		if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 		then
 			gnome-terminal -e "tcpdump -v dst host $ip"
-			nmap -O -oN scan.txt -v $ip
+			nmap -O -oN /root/Desktop/$name/osscan.txt -v $ip
 			sleep 10s
 			pid=$(ps -e | pgrep tcpdump)    
 			kill -2 $pid
@@ -585,6 +581,13 @@ then
 			op1=66
 		fi
 	fi
+
+elif [ "$op1" = "8" ]
+then
+michael
+
+
+
 elif [ "$op1" = "66" ]
 then
 	read -p "do you wanna continue? " w1
@@ -597,11 +600,12 @@ then
 		echo 5.tcpscan
 		echo 6.nullscan
 		echo 7.osscan
+                echo 8.back
 		read -p "enter the option " op1
 	else
 		echo "-------------thankyou-------------"
 		unset op2
-		#break
+		
                 michael
 	fi
 	
@@ -617,12 +621,8 @@ elif [ "$op2" = "2" ]
 then
 	op4=1
 	echo "netdiscover running...."
-	sleep 5s
-	`netdiscover -r 192.168.0.0/24 -PN >netdiscover.txt`
+	netd
 
-	cat netdiscover.txt | awk '{print $1}'
-	
-	
 	read -p "Enter the ip: " ip
 
 	cat nmapls.txt
@@ -646,7 +646,7 @@ then
 				if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 				then
 					gnome-terminal -e "tcpdump -v dst host $ip"
-					nmap --script=$sp2 -oN scan.txt -v -p$p1 $ip	
+					nmap --script=$sp2 -oN /root/Desktop/$name/script.txt -v -p$p1 $ip	
 					sleep 10s
 					pid=$(ps -e | pgrep tcpdump)    
 					kill -2 $pid
@@ -664,7 +664,7 @@ then
 				if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 				then
 					gnome-terminal -e "tcpdump -v dst host $ip"
-					nmap -O --script=$sp2 -oN scan.txt -v $ip
+					nmap -O --script=$sp2 -oN /root/Desktop/$name/script.txt -v $ip
 					sleep 10s
 					pid=$(ps -e | pgrep tcpdump)    
 					kill -2 $pid
@@ -705,7 +705,7 @@ then
 		else
 			echo "-------------thankyou-------------"
 			unset op2
-			#break
+			
                         michael
 		fi
 	else
@@ -716,7 +716,7 @@ done
 #.............................
 elif [ "$op2" = "3" ]
 then
-    echo -e "\nquitting.....\n"
+    #echo -e "\nquitting.....\n"
     main
 
 
@@ -743,7 +743,7 @@ main()
 {
 
 PS3='Please enter your choice: '
-options=("Passive Reconnaissance" "Active Reconnaissance" "Scanning" "Exit")
+options=("Passive Reconnaissance" "Active Reconnaissance" "Scanning" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -764,10 +764,10 @@ do
                   michael
                   ;;
 
-        "Exit")
+        "Quit")
                
                toilet -t -F gay ReconXcrpt
-               echo -e "\nExiting ReconXcript.....\n"
+               echo -e "\nQuitting ReconXcript.....\n"
                echo "--------thankyou---------"
 
                exit
