@@ -5,6 +5,9 @@
 #Reconnaissance-Framework [Bash Menu Script Way]
 #ReconXcrpt,a reconnaissance framework providing beginners to play with various recon-related tools.
 
+#------------------------Trap-------------------------------------------------------------------
+#trap "main && echo main window page; sleep 5" 2
+
 #-------Framework welcome page------------------------------------------------------------------
 echo -e "\n"
 toilet -t -F metal ReconXcrpt #banner
@@ -13,10 +16,13 @@ echo -e "\n"
 echo -e "<< Welcome.2.ReconXcrpt >>\n"
 echo -e "ReconXcrpt >> A Reconnaissance-Framework providing beginners to play with various reconnaissance tools.\n\n"
 
+
 #-------------------------------------------------------------------------
 
-read -p "Please enter your name: " name #taking usernmae
+read -p "Please enter your name: " name #taking username
 mkdir /root/Desktop/$name # creating directory for given username and storing output
+
+
 
 #-----------------creating netdiscover fn-------------------------------------------------------
 
@@ -35,66 +41,71 @@ netd()
 kamal()
 {
                  echo -e "\nMr/Mrs $name,you can try following options:\n "
-              
+#Implementing switch case >>              
                  PS3="Enter your options: "
 
                  select op in whois archive shodan censys pipl beenverified  wireshark tcpdump back
                  do 
                  case $op in
                  whois)
-                  a="https://www.whois.com/whois/"
+                  a="https://www.whois.com/whois/"   #whois website
                   firefox "$a" 
                   echo "done" 
                   echo " "
                   kamal;;
                 
                  archive)
-                  b="https://archive.org/" 
+                  b="https://archive.org/"           #archive website
                   firefox "$b"
                   echo "done" 
                   echo " "
                   kamal;;
                  shodan)
-                  c="https://www.shodan.io/"
+                  c="https://www.shodan.io/"         #shodan website
                   firefox "$c"
                   echo "done" 
                   echo " "
                   kamal;;
                  censys)
-                  d="https://censys.io/"
+                  d="https://censys.io/"             #censys website
                   firefox "$d" 
+                  
                   echo "done"
                   echo " "
                   kamal;;
                  pipl)
-                  e="https://pipl.com/"
+                  e="https://pipl.com/"              #pipl website
                   firefox "$e" 
                   echo " "
                   echo "done" 
+                  echo ""
                   kamal;;
                  beenverified)
-                  f="https://www.beenverified.com/"
+                  f="https://www.beenverified.com/"  #beenverified website
                   firefox "$f" 
                   echo " "
                   echo "done" 
+                  echo ""
                   kamal;;
                  wireshark)
-                  g="wireshark"
+                  g="wireshark"                      #open wireshark 
                   echo $g 
+                  echo ""
                   echo "done" 
                   echo " "
                   kamal;;
-                 tcpdump) 
+                 tcpdump)                            #running tcpdump
                   xterm -geometry 100x50+0+0 -fa 'Monospace' -fs 14  -hold -e 'tcpdump'
                   echo "done" 
                   echo " "
                   kamal;;
-                 back)
-                  
-                  main;;
+                 back) 
+                  echo ""                              
+                  main;;           #go back to show options of reconXcrpt main window {main fn}
                   *)
                   echo -e "\ninvalid option...try again\n" 
-                  kamal;;  
+                  echo ""
+                  kamal;;          #go back to show options of passive recon window {kamal fn}
             esac
             done
           
@@ -108,7 +119,7 @@ sumit()
 
 echo -e "\nMr/Mrs $name,you can try following options:\n "
 
-
+#Implementing switch case >> 
 PS3='Please enter your choice: '
 options=("ping" "nslookup" "traceroute" "whois" "enum4linux" "dnsenum" "smbclient" "nbtscan" "back")
 select opt in "${options[@]}"
@@ -125,7 +136,7 @@ do
             read -p "Enter ip: " target
             
             echo -e "\nRunning ping.....\n"
-   	    timeout 8 ping $target
+   	    timeout 8 ping $target                    #running ping
             echo -e "\nWait Please.....\n"
             timeout 8 ping $target > /root/Desktop/$name/ping.txt
             echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
@@ -139,7 +150,7 @@ do
 
             read -p "Enter domain/ip: " target
             echo -e "\nRunning nslookup.....\n"
-   	    nslookup -type=any $target
+   	    nslookup -type=any $target                #running nslookup
             echo -e "\nWait Please.....\n"            
             nslookup -type=any $target > /root/Desktop/$name/nslookup.txt
             echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
@@ -152,7 +163,7 @@ do
 
             read -p "Enter domain/ip: " target
             echo -e "\nRunning traceroute.....\n"
-   	    traceroute $target
+   	    traceroute $target                      #running traceroute
             echo -e "\nWait Please.....\n" 
             traceroute $target > /root/Desktop/$name/traceroute.txt
             echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
@@ -166,7 +177,7 @@ do
 "whois")
             read -p "Enter domain/ip: " target
             echo -e "\nRunning whois.....\n"
-   	    whois --verbose $target
+   	    whois --verbose $target               #running whois
             echo -e "\nWait Please.....\n"            
             whois --verbose $target > /root/Desktop/$name/whois.txt
             echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
@@ -179,7 +190,7 @@ do
             netd
             read -p "Enter ip: " target
             echo -e "\nRunning enum4linux.....\n"
-   	    enum4linux -v $target
+   	    enum4linux -v $target                    #running enum4linux
             echo -e "\nWait Please.....\n" 
             enum4linux -v $target > /root/Desktop/$name/enum4linux.txt
             echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"    
@@ -191,7 +202,7 @@ do
 "dnsenum")
             read -p "Enter domain/ip: " target
             echo -e "\nRunning dnsenum.....\n"
-            dnsenum --noreverse $target
+            dnsenum --noreverse $target                 #running dnsenum
             echo -e "\nWait Please.....\n" 
             dnsenum --noreverse $target > /root/Desktop/$name/dnsenum.txt
             echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
@@ -206,7 +217,7 @@ do
             read -p "Enter ip:" target
             echo -e "\nRunning smbclient.....\n"
             
-            smbclient -L $target
+            smbclient -L $target                        #running smbclient
             echo -e "\n\nMr/Mrs $name, check above for smbclient run-time output\n"
             sumit            
            ;;
@@ -217,7 +228,7 @@ do
             
             echo -e "\nRunning nbtscan for 192.168.1.0/24.....\n"
             
-            nbtscan -r 192.168.1.0/24
+            nbtscan -r 192.168.1.0/24                    #running nbtscan
             echo -e "\nWait please.....\n"
             nbtscan -r $target > /root/Desktop/$name/nbtscan.txt
             echo -e "\nMr/Mrs $name, you can check /root/Desktop/$name folder for output\n"
@@ -225,8 +236,8 @@ do
            ;;
 #-------------------------------------------------------------------------
         "back")
-                                
-            main
+            echo ""                    
+            main                  #go back to show options of reconXcrpt main window {main fn}
             
             ;;
 
@@ -235,7 +246,7 @@ do
              
              echo -e "\ninvalid option...try again\n"
              
-             sumit
+             sumit               #go back to show options of active recon window {sumit fn}
              ;;
 #-------------------------------------------------------------------------
 
@@ -254,10 +265,10 @@ while [ "$op7" > "0" ]
 do
 if [ "$op7" = "1" ]
 then
-#echo enter you option
+echo -e "Mr/Mrs $name,you can try following options:\n"
 echo 1.scanning
 echo 2.scripts
-echo 3.back
+echo -e "3.back"
 read -p "enter you option: " op2
 while [ "$op2" > "0" ]
 do
@@ -278,7 +289,7 @@ echo 4.xmasscan
 echo 5.tcpscan
 echo 6.nullscan
 echo 7.osscan
-echo 8.back
+echo -e "8.back\n"
 
 read op1
 
@@ -584,6 +595,7 @@ then
 
 elif [ "$op1" = "8" ]
 then
+echo ""
 michael
 
 
@@ -605,7 +617,7 @@ then
 	else
 		echo "-------------thankyou-------------"
 		unset op2
-		
+		echo ""
                 michael
 	fi
 	
@@ -716,7 +728,7 @@ done
 #.............................
 elif [ "$op2" = "3" ]
 then
-    #echo -e "\nquitting.....\n"
+    echo ""
     main
 
 
@@ -738,7 +750,9 @@ done
 
 
 
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#>>>>>>>>>>>>>>>>>>>ReconXcrpt{main fn}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
 main()
 {
 
@@ -760,7 +774,7 @@ do
                   ;;
 
         "Scanning")
-                  echo -e "\nTry Scanning >>>"
+                  echo -e "\nTry Scanning >>>\n"
                   michael
                   ;;
 
@@ -768,17 +782,28 @@ do
                
                toilet -t -F gay ReconXcrpt
                echo -e "\nQuitting ReconXcript.....\n"
-               echo -e "--------thankyou---------\n"
+               echo -e "~Made with ♥ by ReconXcript team:\n"
+               echo -e ">> Kishan"
+               echo -e ">> Kamal"
+               echo -e ">> Michael"
+               echo -e ">> Sai"
+               echo -e ">> Sumit\n"
+               echo -e "~Under mentorship of >> Meenakshi ma'am\n"
+                            
+               echo "------------------------------------------------------------------------"
+               echo -e "Note: Mr/Mrs $name, you can check /root/Desktop/$name folder for output."
+               echo "------------------------------------------------------------------------"
                exit
                ;;
 
              *)
-              echo -e "\nInvalid option $REPLY"
+              echo -e "\nInvalid option $REPLY\n"
               main          
                ;;
 esac
 done
 
 }
+
 main
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
