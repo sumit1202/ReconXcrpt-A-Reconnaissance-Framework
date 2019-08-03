@@ -80,6 +80,6 @@ Quitting ReconXcript.....
 ~Under mentorship of >> Meenakshi ma'am
 
 ------------------------------------------------------------------------
-Note: Mr/Mrs Theri, you can check /root/Desktop/Sumit folder for output.
+Note: Mr/Mrs Sumit, you can check /root/Desktop/Sumit folder for output.
 ------------------------------------------------------------------------
 root@Kali:~/Desktop/ReconXcript# 
