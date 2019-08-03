@@ -5,13 +5,17 @@
 #Reconnaissance-Framework [Bash Menu Script Way]
 #ReconXcrpt,a reconnaissance framework providing beginners to play with various recon-related tools.
 
+#------------------------Trap-------------------------------------------------------------------
+#trap "main && echo main window page; sleep 5" 2
+
 #-------Framework welcome page------------------------------------------------------------------
-echo -e "\n"
+
 toilet -t -F metal ReconXcrpt #banner
 echo -e "\n"
 
 echo -e "<< Welcome.2.ReconXcrpt >>\n"
-echo -e "ReconXcrpt >> A Reconnaissance-Framework providing beginners to play with various reconnaissance tools.\n\n"
+echo -e "ReconXcrpt >> A Reconnaissance-Framework providing beginners to play with various reconnaissance tools.\n"
+
 
 
 #-------------------------------------------------------------------------
@@ -27,7 +31,7 @@ netd()
 {
   echo -e "\nRunning netdiscover.....\n" 
    netdiscover -r 192.168.1.0/24 -PN | awk '{print $1}'
-   netdiscover -r 192.168.0.0/24 -PN >/root/Desktop/$name/netdiscover.txt
+   netdiscover -r 192.168.1.0/24 -PN | awk '{print $1}' > /root/Desktop/$name/netdiscover.txt
   
 }
 
@@ -612,7 +616,7 @@ then
                 echo 8.back
 		read -p "enter the option " op1
 	else
-		echo "-------------thankyou-------------"
+		
 		unset op2
 		echo ""
                 michael
@@ -654,8 +658,9 @@ then
 				read -p "do you want the output in a file? " w2
 				if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 				then
+                                        read -p "Give your file a name: " script
 					gnome-terminal -e "tcpdump -v dst host $ip"
-					nmap --script=$sp2 -oN /root/Desktop/$name/script.txt -v -p$p1 $ip	
+					nmap --script=$sp2 -oN /root/Desktop/$name/$script.txt -v -p$p1 $ip	
 					sleep 10s
 					pid=$(ps -e | pgrep tcpdump)    
 					kill -2 $pid
@@ -672,8 +677,9 @@ then
 				read -p "do you want the output in a file? " w2
 				if [ "$w2" = "y" ] || [ "$w2" = "yes" ]
 				then
+                                        read -p "Give your file a name: " script
 					gnome-terminal -e "tcpdump -v dst host $ip"
-					nmap -O --script=$sp2 -oN /root/Desktop/$name/script.txt -v $ip
+					nmap -O --script=$sp2 -oN /root/Desktop/$name/$script.txt -v $ip
 					sleep 10s
 					pid=$(ps -e | pgrep tcpdump)    
 					kill -2 $pid
@@ -705,14 +711,15 @@ then
 		if [ "$w1" = "y" ] || [ "$w1" = "yes" ]
 		then
 			cat nmapls.txt
-		
+		        
 			read -p "enter the name: " sp1
 		
 			sp2=`cat nmapls.txt | grep $sp1`
 			
 			op4=1
 		else
-			echo "-------------thankyou-------------"
+                        
+			
 			unset op2
 			
                         michael
@@ -790,6 +797,7 @@ do
                echo "------------------------------------------------------------------------"
                echo -e "Note: Mr/Mrs $name, you can check /root/Desktop/$name folder for output."
                echo "------------------------------------------------------------------------"
+               
                exit
                ;;
 
