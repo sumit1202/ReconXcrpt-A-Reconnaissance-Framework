@@ -5,9 +5,6 @@
 #Reconnaissance-Framework [Bash Menu Script Way]
 #ReconXcrpt,a reconnaissance framework providing beginners to play with various recon-related tools.
 
-#------------------------Trap-------------------------------------------------------------------
-#trap "main && echo main window page; sleep 5" 2
-
 #-------Framework welcome page------------------------------------------------------------------
 echo -e "\n"
 toilet -t -F metal ReconXcrpt #banner
