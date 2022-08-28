@@ -69,7 +69,7 @@ Please enter your choice: 4
 
 Quitting ReconXcript.....
 
-~Made with ♥ by ReconXcript team:
+~Made with ♥ by ReconXcrpt team:
 
 >> Kishan
 >> Kamal
